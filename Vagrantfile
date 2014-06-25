@@ -24,6 +24,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   #Enable shell provisioning to bootstrap puppet
   config.vm.provision :shell, :path => "bootstrap.sh"  
+   
+  #Enable provisioning with Puppet stand alone.
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file = "site.pp"
+    puppet.module_path = "puppet/modules"
+    puppet.options = "--verbose --debug"
+  end
 
 
 
