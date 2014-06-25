@@ -21,7 +21,7 @@ wget -qO /tmp/puppetlabs-precise.deb https://apt.puppetlabs.com/puppetlabs-relea
 dpkg -i /tmp/puppetlabs-precise.deb
 
 #delete
-rm /tmp/puppetlabs-release-precise.deb
+rm /tmp/puppetlabs-precise.deb
 
 aptitude update
 
