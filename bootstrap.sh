@@ -23,10 +23,12 @@ dpkg -i /tmp/puppetlabs-precise.deb
 #delete
 rm /tmp/puppetlabs-precise.deb
 
-aptitude update
+apt-get update
 
 #aptitude upgrade -y
 
-echo Installing puppetaptitude install -y puppet
+echo Installing puppet
+
+apt-get install -y puppet
 
 echo "Puppet Installed!"
