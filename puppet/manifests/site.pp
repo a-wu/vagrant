@@ -1,13 +1,13 @@
-node 'test.albertwu.vm' { #[1]
-  class { 'mysql::server': #[2]
-    config_hash => {'root_password' => 'testpassword' },
+node 'test.albertwu.vm' {
+  class { 'mysql::server':  # [2]
+    root_password => 'test-password',
   }
+  #include mysql::php # [3]
 
-  include mysql::php #[3]
 
   #Configure Apache
   include apache #[4]
-  include apache::mod::php
+  #include apache::mod::php
 
   apache::vhost { $::fqdn: #[5]
     port => '80',
@@ -25,5 +25,5 @@ node 'test.albertwu.vm' { #[1]
   }
 
   # "Realize" the firewall rule
-  Firewall <| |> #[8]
+  # Firewall <| |> #[8]
 }
