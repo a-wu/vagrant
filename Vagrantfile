@@ -21,7 +21,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #Use VBoxManage to customize the VM. For example change memory
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
-  
+
+  #Enable shell provisioning to bootstrap puppet
+  config.vm provision :shell, :path => "bootstrap.sh"  
 
 
 
