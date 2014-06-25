@@ -15,9 +15,7 @@ fi
 
 echo "Installing Puppet repo for Ubuntu 12.04 LTS"
 #download from puppetlabs
-wget -qO /tmp/puppetlabs-precise.deb \
-
-https://apt.puppetlabs.com/puppetlabs-release-precise.deb
+wget -qO /tmp/puppetlabs-precise.deb https://apt.puppetlabs.com/puppetlabs-release-precise.deb
 
 #install
 dpkg -i /tmp/puppetlabs-precise.deb
